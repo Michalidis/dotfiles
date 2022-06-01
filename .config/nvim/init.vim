@@ -44,7 +44,28 @@ Plug 'kana/vim-submode'
 " Syntax Highlighting for Perl/Template Toolkit "
 Plug 'vim-perl/vim-perl'
 
+" Javascript, TypeScript and React support (bundle intended for react development)
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 call plug#end()
+
+" Visual Multi config
+let g:VM_maps = {}
+let g:VM_maps['Add Cursor Up'] = ''
+let g:VM_maps['Add Cursor Down'] = ''
+
+" JSX pretty config
+let g:vim_jsx_pretty_highlight_close_tag = 1
+
+" Vim prettier config
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " Remap leader
 let mapleader = "\<space>"
@@ -117,6 +138,14 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 vnoremap <silent> í {
 vnoremap <silent> é }
 
+" Move line up and down
+nnoremap <S-Down> :m .+1<CR>==
+nnoremap <S-Up> :m .-2<CR>==
+inoremap <S-Down> <Esc>:m .+1<CR>==gi
+inoremap <S-Up> <Esc>:m .-2<CR>==gi
+vnoremap <S-Down> :m '>+1<CR>gv=gv
+vnoremap <S-Up> :m '<-2<CR>gv=gv
+
 " dont use Q for Ex mode
 map Q :q
 
@@ -147,7 +176,7 @@ nmap thp <Plug>(GitGutterPreviewHunk)
 nmap ff :FloatermNew<CR>
 nmap ft :FloatermToggle<CR>
 nmap fn :FloatermNext<CR>
-nmap fp :FloatermPrev<CR>
+"nmap fp :FloatermPrev<CR>
 
 " Remap Ctrl-y for easier terminal mode cancel combo (<C-\><C-n>)
 tnoremap <C-y> <C-\>
@@ -178,7 +207,7 @@ set encoding=utf-8
 au BufNewFile,BufRead *.py
     \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
-au FileType javascript,html,css set tabstop=2 softtabstop=2 shiftwidth=2
+au FileType javascript,html,css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 """ Perl coding
 
