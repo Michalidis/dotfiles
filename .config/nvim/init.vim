@@ -53,6 +53,9 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typ
 
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+" HTML generate closing tags
+Plug 'alvan/vim-closetag'
+
 call plug#end()
 
 " Visual Multi config
