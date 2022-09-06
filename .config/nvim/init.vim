@@ -56,6 +56,14 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " HTML generate closing tags
 Plug 'alvan/vim-closetag'
 
+" Status line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Buffer line
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+
 call plug#end()
 
 " Visual Multi config
@@ -189,6 +197,7 @@ map <leader>r :FloatermNew ranger<CR>
 
 " FZF
 nmap <leader>e :FZF<CR>
+"nmap <leader>e :GFiles<CR>
 nmap <leader>f :Rg 
 
 " Tidy selected lines (or entire file) with _t:
@@ -234,6 +243,9 @@ autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl set errorformat=%f:%l:%m
 autocmd FileType perl set autowrite
 
+" display filename in bottom bar at all times
+"set statusline+=%F
+
 " Redefine semshi color scheme to match gruvbox
 hi semshiGlobal          ctermfg=167 guifg=#fb4934
 hi semshiImported        ctermfg=214 guifg=#fabd2f cterm=bold gui=bold
@@ -243,3 +255,20 @@ hi semshiBuiltin         ctermfg=208 guifg=#fe8019
 hi semshiAttribute       ctermfg=108  guifg=fg
 hi semshiSelf            ctermfg=109 guifg=#85a598
 hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
+
+" Airline config
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts = 1
+
+" Buffer config
+map <C-W><C-Right> :bn<cr>
+map <C-W><C-Left> :bp<cr>
+map <C-W><C-d> :bd<cr>
+
+" Bufferline
+set termguicolors
+lua << EOF
+require("bufferline").setup{}
+EOF
