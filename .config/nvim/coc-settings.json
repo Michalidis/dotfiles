@@ -5,6 +5,7 @@
 
   // Typescript
   "typescript.preferences.importModuleSpecifier": "relative",
+  "tsserver.implicitProjectConfig.experimentalDecorators": true,
 
   // Run prettier (and others)
   "coc.preferences.formatOnSaveFiletypes": [
