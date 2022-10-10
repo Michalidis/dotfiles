@@ -205,6 +205,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list shor
 
 # Print screen of selection to clipboard
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Print exec flameshot gui
 
 # Run custom scripts on startup
 exec_always --no-startup-id /home/bud/.config/i3/i3_autostart.sh
