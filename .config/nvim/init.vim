@@ -161,12 +161,12 @@ vnoremap <S-Up> :m '<-2<CR>gv=gv
 map Q :q
 
 " make tab in normal mode indent code (Commented out - added to Coc config)
-" nmap <tab> I<tab><esc>
-" nmap <s-tab> ^i<bs><esc>
+nmap <tab> I<tab><esc>
+nmap <s-tab> ^i<bs><esc>
 
 " make tab in v mode indent code (Commented out - added to Coc config)
-" vmap <tab> >gv
-" vmap <s-tab> <gv
+vmap <tab> >gv
+vmap <s-tab> <gv
 
 " Git Gutter Config "
 
@@ -263,9 +263,17 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
 " Buffer config
-map <C-W><C-Right> :bn<cr>
-map <C-W><C-Left> :bp<cr>
-map <C-W><C-d> :bd<cr>
+"map <C-W><C-Right> :bn<cr>
+"map <C-W><C-Left> :bp<cr>
+"map <C-W><C-d> :bd<cr>
+
+call submode#enter_with('prev/next', 'n', '', '<C-W><C-Left>', ':bp<CR>')
+call submode#enter_with('prev/next', 'n', '', '<C-W><C-Right>', ':bn<CR>')
+call submode#enter_with('prev/next', 'n', '', '<C-W><C-d>', ':bd<CR>')
+
+call submode#map('prev/next', 'n', '', '<C-Left>', ':bp<CR>')
+call submode#map('prev/next', 'n', '', '<C-Right>', ':bn<CR>')
+call submode#map('prev/next', 'n', '', '<C-d>', ':bd<CR>')
 
 " Bufferline
 set termguicolors
