@@ -192,6 +192,10 @@ nmap thr <Plug>(GitGutterUndoHunk)
 " Preview hunk changes
 nmap thp <Plug>(GitGutterPreviewHunk)
 
+" coc-angular
+nmap <leader>gc :call CocAction('runCommand', 'angular.goToComponentWithTemplateFile')
+nmap <leader>gt :call CocAction('runCommand', 'angular.goToTemplateForComponent')
+
 " Floaterm config
 nmap ff :FloatermNew<CR>
 nmap ft :FloatermToggle<CR>
