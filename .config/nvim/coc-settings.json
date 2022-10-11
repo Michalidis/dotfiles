@@ -10,11 +10,16 @@
   // Run prettier (and others)
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
+    "scss",
     "markdown",
     "Markdown",
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
+    "graphql",
+    "handlebars",
+    "html"
   ]
 }

@@ -64,6 +64,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
+" LUA
+Plug 'nvim-lua/plenary.nvim'
+
+" Mason - LSP configuration interface
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
 
 " Visual Multi config
@@ -76,7 +84,8 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 
 " Vim prettier config
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " Remap leader
 let mapleader = "\<space>"
@@ -200,6 +209,9 @@ nmap <leader>e :FZF<CR>
 "nmap <leader>e :GFiles<CR>
 nmap <leader>f :Rg 
 
+" Mason 
+map <leader>m :Mason<CR>
+
 " Tidy selected lines (or entire file) with _t:
 nnoremap <silent> _t :%!perltidy -q<Enter>
 vnoremap <silent> _t :!perltidy -q<Enter>
@@ -278,5 +290,10 @@ call submode#map('prev/next', 'n', '', '<C-d>', ':bd<CR>')
 " Bufferline
 set termguicolors
 lua << EOF
-require("bufferline").setup{}
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+require("bufferline").setup()
+
+require("modules")
 EOF
