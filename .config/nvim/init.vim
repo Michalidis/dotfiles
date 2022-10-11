@@ -193,8 +193,8 @@ nmap thr <Plug>(GitGutterUndoHunk)
 nmap thp <Plug>(GitGutterPreviewHunk)
 
 " coc-angular
-nmap <leader>ac :call CocAction('runCommand', 'angular.goToComponentWithTemplateFile')<CR>
-nmap <leader>at :call CocAction('runCommand', 'angular.goToTemplateForComponent')<CR>
+nmap <leader>gc :call CocAction('runCommand', 'angular.goToComponentWithTemplateFile')<CR>
+nmap <leader>gt :call CocAction('runCommand', 'angular.goToTemplateForComponent')<CR>
 
 " Floaterm config
 nmap ff :FloatermNew<CR>
