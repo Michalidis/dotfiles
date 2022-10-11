@@ -1,4 +1,7 @@
 {
+  // CoC Angular
+  "angular.suggest.includeAutomaticOptionalChainCompletions": true,
+
   // Tslint on save
   "tslint.enable": true,
   "tslint.autoFixOnSave": true,
