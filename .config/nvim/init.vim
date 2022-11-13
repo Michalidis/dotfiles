@@ -1,6 +1,8 @@
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'iamcco/coc-angular'
+
 " Color scheme "
 Plug 'morhetz/gruvbox'
 
@@ -10,6 +12,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -98,6 +101,9 @@ let perl_extended_vars = 1
 
 " Tmux panel x Nvim split switching
 let g:tmux_navigator_no_mappings = 1
+
+" Fugitive gitlab config
+let g:fugitive_gitlab_domains = ['https://gitlab.atteq.com']
 
 " Display line numbers
 set number
@@ -258,6 +264,9 @@ autocmd BufNewFile,BufRead *.tt2 setf tt2html
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
 autocmd FileType perl set errorformat=%f:%l:%m
 autocmd FileType perl set autowrite
+
+" coc-css
+autocmd FileType scss setl iskeyword+=@-@
 
 " display filename in bottom bar at all times
 "set statusline+=%F

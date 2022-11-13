@@ -1,5 +1,6 @@
 {
   // CoC Angular
+  "angular.suggest.includeCompletionsWithSnippetText": true,
   "angular.suggest.includeAutomaticOptionalChainCompletions": true,
 
   // Tslint on save
