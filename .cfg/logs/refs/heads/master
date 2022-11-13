@@ -1,0 +1,30 @@
+0000000000000000000000000000000000000000 4ac0486904fc4585c01d8211eeca5e8721dacd09 fibich <fibich@atteq.com> 1630540039 +0200	commit (initial): Add init.vim for nvim
+4ac0486904fc4585c01d8211eeca5e8721dacd09 1d335f6d26af5995b9ee40e1083d6d6dc3d3fd46 fibich <fibich@atteq.com> 1630540072 +0200	commit: Add coc.vim for nvim
+1d335f6d26af5995b9ee40e1083d6d6dc3d3fd46 8d3d9baa5a08d898f882afe3b8bd8d9cdcb1cedc fibich <fibich@atteq.com> 1630540257 +0200	commit: Add coc-settings.json for nvim CoC
+8d3d9baa5a08d898f882afe3b8bd8d9cdcb1cedc 09e9082dc09a50604410339e07ebbb5046ee268d fibich <fibich@atteq.com> 1630542419 +0200	commit: Add i3 config
+09e9082dc09a50604410339e07ebbb5046ee268d 30e52908511e0d99a0f0cd267da038d743813238 fibich <fibich@atteq.com> 1630542856 +0200	commit: Add ranger
+30e52908511e0d99a0f0cd267da038d743813238 0372f4625aed76813c38836cbf546d361f2bf04f fibich <fibich@atteq.com> 1630543645 +0200	commit: Add tmux
+0372f4625aed76813c38836cbf546d361f2bf04f c61e80178d9af9e8c3e4fbbd3a1d73bd52c62745 fibich <fibich@atteq.com> 1654060094 +0200	commit: Update volume hotkeys
+c61e80178d9af9e8c3e4fbbd3a1d73bd52c62745 1b65fe62c747a12a46af99384d3afdd68a304891 fibich <fibich@atteq.com> 1654060208 +0200	commit: New plugins for react development and multi selection plugin
+1b65fe62c747a12a46af99384d3afdd68a304891 404896d74cb8dbc30c62d560e21a9b9cdd2c9123 fibich <fibich@atteq.com> 1655446262 +0200	commit: Set keyboard rate on keyboard connected event
+404896d74cb8dbc30c62d560e21a9b9cdd2c9123 bb8337ad6ae66cbe756beaf2f89984139c1e884d fibich <fibich@atteq.com> 1655446775 +0200	commit: Add .zshrc
+bb8337ad6ae66cbe756beaf2f89984139c1e884d 3cb486db3724695f57edeffd1969b5e06d05c808 fibich <fibich@atteq.com> 1655447009 +0200	commit: Add oh-my-zsh as submodule
+3cb486db3724695f57edeffd1969b5e06d05c808 e4b0ab699d736b3b0ed560a442dc93c874c02ff0 fibich <fibich@atteq.com> 1662131811 +0200	commit: Update config
+e4b0ab699d736b3b0ed560a442dc93c874c02ff0 3b2fc31de75a2c7e127fe17dd19b576ccc34c8e7 fibich <fibich@atteq.com> 1662432611 +0200	commit: Added airline and buffline
+3b2fc31de75a2c7e127fe17dd19b576ccc34c8e7 38b6a5a3aca195bbe7cc9bf95700b13b032f6f48 fibich <fibich@atteq.com> 1662432645 +0200	commit: Update coc.vim for new version of plugins
+38b6a5a3aca195bbe7cc9bf95700b13b032f6f48 1b973d2b05fca78f61c47458710a4f9942244d70 fibich <fibich@atteq.com> 1662446131 +0200	commit: Update FZF to use ag command to filter out files in .gitignore
+1b973d2b05fca78f61c47458710a4f9942244d70 8de00965cc07af50ac41ca0b63eec33b0ac6e91a fibich <fibich@atteq.com> 1662446334 +0200	commit: Added fonts required by certain nvim plugins and to make the terminal look nicer
+8de00965cc07af50ac41ca0b63eec33b0ac6e91a 4965e320c28ba0726cd95443bfb2846b37d3f903 fibich <fibich@atteq.com> 1665435951 +0200	commit: Add flameshot hotkey
+4965e320c28ba0726cd95443bfb2846b37d3f903 3642b6908befc03093d33e9bb43f7187fed37078 fibich <fibich@atteq.com> 1665435981 +0200	commit: Fix tab indentation
+3642b6908befc03093d33e9bb43f7187fed37078 cfec821dc6c5b595457945978e4ec918a365292e fibich <fibich@atteq.com> 1665436014 +0200	commit: Remove warnings for experimental decorators
+cfec821dc6c5b595457945978e4ec918a365292e 547a7a096fa5ec48565fc82f835e048823be5681 fibich <fibich@atteq.com> 1665436121 +0200	commit: Additional key bindings
+547a7a096fa5ec48565fc82f835e048823be5681 89d2e6c9c689322048ea9475ad3fe7130aabb59c fibich <fibich@atteq.com> 1665508249 +0200	commit: Add readme
+89d2e6c9c689322048ea9475ad3fe7130aabb59c ce5ff96a172f9e7856acbff760a1ee83eac14333 fibich <fibich@atteq.com> 1665508440 +0200	commit: Add Mason and update prettier configuration
+ce5ff96a172f9e7856acbff760a1ee83eac14333 5bf7eabaa993346911227725f2e301bd0f9524d7 fibich <fibich@atteq.com> 1665509860 +0200	commit: Add mapping for coc-angular
+5bf7eabaa993346911227725f2e301bd0f9524d7 8f6c81858e46853c8f701f48e8c375eed48fe47f fibich <fibich@atteq.com> 1665510546 +0200	commit: Coc config for angular and adjust the keymapping
+8f6c81858e46853c8f701f48e8c375eed48fe47f 50e967872c5aa4c123228fd92c8a9834d1870d15 fibich <fibich@atteq.com> 1665510658 +0200	commit: revert update of keymapping
+50e967872c5aa4c123228fd92c8a9834d1870d15 303ef6776a41ccf50e86654adcab9fb3aca2f699 fibich <fibich@atteq.com> 1668352166 +0100	commit: Small updates to config and new plugins
+303ef6776a41ccf50e86654adcab9fb3aca2f699 d1063a83454c76b8ef8b2fd2521e0f279931a8f3 fibich <fibich@atteq.com> 1668354375 +0100	commit: Added scripts folder
+d1063a83454c76b8ef8b2fd2521e0f279931a8f3 cb2dc69a23c231cac27fc25d74f2125a4edf23fd fibich <fibich@atteq.com> 1668354966 +0100	commit: Add custom scripts
+cb2dc69a23c231cac27fc25d74f2125a4edf23fd 78952bd6f63d07efc6c61bd6c8ad16f76b33df30 fibich <fibich@atteq.com> 1668355077 +0100	commit: Add bashrc
+78952bd6f63d07efc6c61bd6c8ad16f76b33df30 9ef1fb8c04a99b4ae7bacb184a05db65987c8e40 fibich <fibich@atteq.com> 1668361463 +0100	commit: Package json for coc
