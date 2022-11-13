@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# NAME: hotplugtv
+# PATH: /usr/local/bin
+# DESC: Update pulseaudio output device when HDMI TV plugged / unplugged
+# CALL: called from /etc/udev/rules.d/99-monitor-hotplug.rules
+# DATE: Created Nov 26, 2016.
+# NOTE: logs output using log-file
+# UPDT: Dec 14, 2016 - Sometimes /sys/class/drm/card0 & sometimes /sys/class/drm/card1
+#       so use /sys/class/dmcard* instead.
+
+if [[ $(cat /sys/class/drm/card*-HDMI-A-1/status | grep -Ec "^connected") -eq 1 ]]; then
+#        log-file "HDMI TV connected" ~/bin/log-hotplugtv;
+        /bin/sleep 2;
+        export PULSE_RUNTIME_PATH="/run/user/1000/pulse/";
+        sudo -u bud -E pacmd set-card-profile 0 output:hdmi-stereo;
+else
+#        log-file "HDMI TV disconnected" ~/bin/log-hotplugtv;
+        export PULSE_RUNTIME_PATH="/run/user/1000/pulse/";
+        sudo -u bud -E pacmd set-card-profile 0 output:analog-stereo;
+fi
+
+exit 0
