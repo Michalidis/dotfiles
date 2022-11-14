@@ -1,6 +1,7 @@
 https://www.atlassian.com/git/tutorials/dotfiles
 
 EXISTING SYSTEM WITH DOTFILES ALREADY CLONED:
+
 1. alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 2. echo ".cfg" >> .gitignore
 3. git clone --bare git@github.com:Michalidis/dotfiles.git $HOME/.cfg
@@ -73,3 +74,7 @@ Install luarocks: (is this needed?)
 7. tar zxpf luarocks-3.8.0.tar.gz
 8. cd luarocks-3.8.0
 9. ./configure --with-lua-include=/usr/local/include
+
+Install flameshot (screenshots):
+
+1. sudo apt-get install flameshot
