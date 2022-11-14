@@ -26,9 +26,6 @@ Plug 'mhinz/vim-startify'
 " MySQL "
 Plug 'https://github.com/kezhenxu94/vim-mysql-plugin.git'
 
-" GhostText - Edit Websites "
-Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
-
 " Python Indetation Fix "
 Plug 'vim-scripts/indentpython.vim'
 
@@ -129,21 +126,24 @@ nmap <C-s> :w
 " map <C-W><C-Left> <C-W><
 " map <C-W><C-Right> <C-W>>
 
-call submode#enter_with('grow/shrink', 'n', '', '<C-W><Up>', '<C-W>+')
-call submode#enter_with('grow/shrink', 'n', '', '<C-W><Down>', '<C-W>-')
-call submode#enter_with('grow/shrink', 'n', '', '<C-W><Right>', '<C-W>>')
-call submode#enter_with('grow/shrink', 'n', '', '<C-W><Left>', '<C-W><')
+call submode#enter_with('resize', 'n', '', '<C-W><Up>', '<C-W>+')
+call submode#enter_with('resize', 'n', '', '<C-W><Down>', '<C-W>-')
+call submode#enter_with('resize', 'n', '', '<C-W><Right>', '<C-W>>')
+call submode#enter_with('resize', 'n', '', '<C-W><Left>', '<C-W><')
 
-call submode#map('grow/shrink', 'n', '', '<Up>', '<C-W>+')
-call submode#map('grow/shrink', 'n', '', '<Down>', '<C-W>-')
-call submode#map('grow/shrink', 'n', '', '<Right>', '<C-W>>')
-call submode#map('grow/shrink', 'n', '', '<Left>', '<C-W><')
+call submode#map('resize', 'n', '', '<Up>', '<C-W>+')
+call submode#map('resize', 'n', '', '<Down>', '<C-W>-')
+call submode#map('resize', 'n', '', '<Right>', '<C-W>>')
+call submode#map('resize', 'n', '', '<Left>', '<C-W><')
 
 " Disable submode timeouts
 let g:submode_timeout = 0
 
 " Do not consume submode-leaving key
 let g:submode_keep_leaving_key = 1
+
+" Show submode message
+let g:submode_always_show_submode = 1
 
 " Move per paragraphs in normal mode
 nnoremap <silent> í {
@@ -292,13 +292,13 @@ let g:airline_powerline_fonts = 1
 "map <C-W><C-Left> :bp<cr>
 "map <C-W><C-d> :bd<cr>
 
-call submode#enter_with('prev/next', 'n', '', '<C-W><C-Left>', ':bp<CR>')
-call submode#enter_with('prev/next', 'n', '', '<C-W><C-Right>', ':bn<CR>')
-call submode#enter_with('prev/next', 'n', '', '<C-W><C-d>', ':bd<CR>')
+call submode#enter_with('pr/ne', 'n', '', '<C-W><C-Left>', ':bp<CR>')
+call submode#enter_with('pr/ne', 'n', '', '<C-W><C-Right>', ':bn<CR>')
+call submode#enter_with('pr/ne', 'n', '', '<C-W><C-d>', ':bd<CR>')
 
-call submode#map('prev/next', 'n', '', '<C-Left>', ':bp<CR>')
-call submode#map('prev/next', 'n', '', '<C-Right>', ':bn<CR>')
-call submode#map('prev/next', 'n', '', '<C-d>', ':bd<CR>')
+call submode#map('pr/ne', 'n', '', '<C-Left>', ':bp<CR>')
+call submode#map('pr/ne', 'n', '', '<C-Right>', ':bn<CR>')
+call submode#map('pr/ne', 'n', '', '<C-d>', ':bd<CR>')
 
 " Bufferline
 set termguicolors
