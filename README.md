@@ -1,6 +1,14 @@
 https://www.atlassian.com/git/tutorials/dotfiles
 
 EXISTING SYSTEM WITH DOTFILES ALREADY CLONED:
+1. alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+2. echo ".cfg" >> .gitignore
+3. git clone --bare git@github.com:Michalidis/dotfiles.git $HOME/.cfg
+4. alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+5. config checkout
+6. config config --local status.showUntrackedFiles no
+7. config submodule init
+8. config submodule update
 
 Before performing git actions, call
 
