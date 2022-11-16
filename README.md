@@ -78,3 +78,46 @@ Install luarocks: (is this needed?)
 Install flameshot (screenshots):
 
 1. sudo apt-get install flameshot
+
+Install docker:
+
+1. sudo apt update
+2. sudo apt install apt-transport-https ca-certificates curl software-properties-common
+3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+4. echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+5. sudo apt update
+6. apt-cache policy docker-ce
+7. sudo apt-get install docker-ce
+8. sudo systemctl status docker
+
+Execute docker without sudo:
+
+1. sudo usermod -aG docker ${USER}
+2. PERFORM A SYSTEM REBOOT
+
+Install docker-compose:
+
+1. mkdir -p ~/.docker/cli-plugins/
+2. curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+3. mv docker-compose ~/.docker/cli-plugins/docker-compose
+4. chmod +x ~/.docker/cli-plugins/docker-compose
+5. sudo ln -s ~/.docker/cli-plugins/docker-compose /usr/bin/docker-compose
+
+Install Angular language service:
+
+1. npm -g install typescript
+2. npm -g install @angular/language-service
+3. npm -g install @angular/cli
+
+Install Typescript language server:
+
+1. npm -g install typescript-language-server typescript
+
+Install TSLint:
+
+1. Open nvim
+2. execute :CocInstall coc-tslint
+
+Install RipGrep (used by <leader>r mapping):
+
+1. sudo apt-get install ripgrep
