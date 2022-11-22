@@ -121,3 +121,7 @@ Install TSLint:
 Install RipGrep (used by <leader>r mapping):
 
 1. sudo apt-get install ripgrep
+
+Install hotplug (to auto-execute script when keyboard connects):
+
+1. sudo apt-get install hotplug-utils
