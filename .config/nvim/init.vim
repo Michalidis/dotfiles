@@ -67,6 +67,10 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " LUA
 Plug 'nvim-lua/plenary.nvim'
 
+" ChatGPT
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 " Mason - LSP configuration interface
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -82,12 +86,19 @@ Plug 'kamykn/popup-menu.nvim'
 " Copilot
 Plug 'github/copilot.vim'
 
+" ChatGPT
+Plug 'jackMort/ChatGPT.nvim', {'do': ':UpdateRemotePlugins'}
+
 call plug#end()
 
 " Copilot mappings
 imap <M-ä> <Plug>(copilot-next)
 imap <M-ú> <Plug>(copilot-previous)
 imap <C-l> <Plug>(copilot-dismiss)
+
+" ChatGPT
+let $OPENAI_API_KEY = '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'
+let $GPT_API_KEY = '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'
 
 " Visual Multi config
 let g:VM_maps = {}
@@ -337,4 +348,6 @@ require("mason-lspconfig").setup()
 require("bufferline").setup()
 
 require("modules")
+
+require("chatgpt").setup()
 EOF
