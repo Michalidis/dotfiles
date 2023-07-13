@@ -24,7 +24,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
 
 " MySQL "
-Plug 'https://github.com/kezhenxu94/vim-mysql-plugin.git'
+" Plug 'https://github.com/kezhenxu94/vim-mysql-plugin.git'
 
 " Python Indetation Fix "
 Plug 'vim-scripts/indentpython.vim'
@@ -72,7 +72,22 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 
+" GitTimeLapse command - browse file commit history
+Plug 'junkblocker/git-time-lapse'
+
+" Spellchecker plugin
+Plug 'kamykn/spelunker.vim'
+Plug 'kamykn/popup-menu.nvim'
+
+" Copilot
+Plug 'github/copilot.vim'
+
 call plug#end()
+
+" Copilot mappings
+imap <M-ä> <Plug>(copilot-next)
+imap <M-ú> <Plug>(copilot-previous)
+imap <C-l> <Plug>(copilot-dismiss)
 
 " Visual Multi config
 let g:VM_maps = {}
@@ -202,6 +217,9 @@ nmap thp <Plug>(GitGutterPreviewHunk)
 nmap <leader>gc :call CocAction('runCommand', 'angular.goToComponentWithTemplateFile')<CR>
 nmap <leader>gt :call CocAction('runCommand', 'angular.goToTemplateForComponent')<CR>
 
+" git-time-lapse
+nmap <Leader>gh <Plug>(git-time-lapse)
+
 " Floaterm config
 nmap ff :FloatermNew<CR>
 nmap ft :FloatermToggle<CR>
@@ -221,6 +239,9 @@ nmap <leader>f :Rg
 
 " Mason 
 map <leader>m :Mason<CR>
+
+" Run build script
+map <leader>g :!./scripts/build.sh<CR>
 
 " Tidy selected lines (or entire file) with _t:
 nnoremap <silent> _t :%!perltidy -q<Enter>
@@ -242,6 +263,12 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
 
 au FileType javascript,html,css set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+""" Javascript coding
+set foldmethod=syntax
+set foldcolumn=1
+let javaScript_fold=1
+set foldlevelstart=99
 
 """ Perl coding
 
@@ -269,7 +296,7 @@ autocmd FileType perl set autowrite
 autocmd FileType scss setl iskeyword+=@-@
 
 " display filename in bottom bar at all times
-"set statusline+=%F
+" set statusline+=%t
 
 " Redefine semshi color scheme to match gruvbox
 hi semshiGlobal          ctermfg=167 guifg=#fb4934
@@ -286,6 +313,7 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 0
 
 " Buffer config
 "map <C-W><C-Right> :bn<cr>

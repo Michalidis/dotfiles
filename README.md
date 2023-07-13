@@ -122,6 +122,6 @@ Install RipGrep (used by <leader>r mapping):
 
 1. sudo apt-get install ripgrep
 
-Install hotplug (to auto-execute script when keyboard connects):
+Enable automatic keyboard frequency change when keyboard is replugged (config found in i3_autostart.sh):
 
-1. sudo apt-get install hotplug-utils
+1. sudo apt-get install inputplug
