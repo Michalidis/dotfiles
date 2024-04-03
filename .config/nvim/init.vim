@@ -97,7 +97,7 @@ imap <M-ú> <Plug>(copilot-previous)
 imap <C-l> <Plug>(copilot-dismiss)
 
 " ChatGPT (gp.nvim Plugin)
-" let $OPENAI_API_KEY = 'TODO - add your API key here and never commit/push it to git'
+let $OPENAI_API_KEY = 'TODO'
 
 " gp.nvim mappings
 " Check the bottom of file in the lua section for keymapping config
@@ -267,7 +267,17 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 nnoremap <silent> _d :.!perl -MO=Deparse 2>/dev/null<cr>
 vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 
+" Show all available keymaps
+nnoremap <leader>L :Telescope keymaps<CR>
+
 " FILE SPECIFIC CONFIG "
+""" Automatically reload .txt files when they change on disk
+augroup auto_read
+  autocmd!
+  autocmd FocusGained,BufEnter,CursorHold *.txt if getcmdwintype() == '' | checktime | endif
+  autocmd FileChangedShellPost *.txt if getcmdwintype() == '' | echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None | endif
+augroup END
+
 """ TypeScript coding
 autocmd FileType typescript set tabstop=2|set softtabstop=2|set expandtab|set shiftwidth=2
 
