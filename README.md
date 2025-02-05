@@ -43,7 +43,7 @@ Install NVIM:
 5. sudo make install
 6. choose and install a font from "fonts/" folder
 7. sudo apt install silversearcher-ag
-8. run nvim and run "forceUpdateAll", usually accessed by <leader>c menu
+8. run nvim and run "forceUpdateAll", usually accessed by \<leader\>c menu
 9. sudo npm install -g neovim
 10. pip3 install --upgrade pynvim
 11. fix issues when running ":checkhealth" from nvim
