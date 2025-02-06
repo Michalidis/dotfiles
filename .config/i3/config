@@ -213,5 +213,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec peek
 
+bindsym $mod+Shift+s exec --no-startup-id /usr/bin/clicker.sh
+
 # Run custom scripts on startup
 exec_always --no-startup-id /home/bud/.config/i3/i3_autostart.sh
