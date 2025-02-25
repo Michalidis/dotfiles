@@ -230,8 +230,13 @@ nmap thr <Plug>(GitGutterUndoHunk)
 nmap thp <Plug>(GitGutterPreviewHunk)
 
 " coc-angular
-nmap <leader>gc :call CocAction('runCommand', 'angular.goToComponentWithTemplateFile')<CR>
-nmap <leader>gt :call CocAction('runCommand', 'angular.goToTemplateForComponent')<CR>
+"nmap <leader>gc :call CocAction('runCommand', 'angular.goToComponentWithTemplateFile')<CR>
+"nmap <leader>gt :call CocAction('runCommand', 'angular.goToTemplateForComponent')<CR>
+
+" Quick file edits
+nnoremap <silent> <leader>gc :edit %<.ts<CR>
+nnoremap <silent> <leader>gt :edit %<.html<CR>
+nnoremap <silent> <leader>gs :edit %<.scss<CR>
 
 " git-time-lapse
 nmap <Leader>gh <Plug>(git-time-lapse)
@@ -359,8 +364,8 @@ set termguicolors
 lua << EOF
 require("mason").setup()
 require("mason-lspconfig").setup()
-
 require("bufferline").setup()
+require'lspconfig'.angularls.setup{}
 
 require("modules")
 

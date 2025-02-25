@@ -1,16 +1,14 @@
 {
   "dependencies": {
-    "coc-angular": ">=17.0.2",
     "coc-css": ">=2.1.0",
     "coc-highlight": ">=2.0.4",
     "coc-json": ">=1.9.2",
     "coc-lists": ">=1.5.1",
     "coc-prettier": ">=9.3.2",
     "coc-snippets": ">=3.1.10",
-    "coc-tslint": ">=1.0.17",
     "coc-tsserver": ">=2.2.0",
     "coc-vetur": ">=1.2.5",
     "coc-eslint": ">=1.7.0"
   },
-  "lastUpdate": 1738797956589
+  "lastUpdate": 1738873369717
 }

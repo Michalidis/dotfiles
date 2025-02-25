@@ -14,4 +14,3 @@ local mason_lspconfig = require('mason-lspconfig')
     local opts = {}
     nvim_lsp[server_name].setup(opts)
 end})
-
