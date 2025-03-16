@@ -1,0 +1,176 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+	snippet ngcomp "Generate a new Angular component with external template and styles" b
+	import { Component, OnInit } from '@angular/core';
+
+	@Component({
+		selector: 'app-${1:component}',
+		templateUrl: './${1:component}.component.html',
+		styleUrls: ['./${1:component}.component.scss']
+	})
+
+	export class ${1:Component}Component implements OnInit {
+		constructor() { }
+
+		ngOnInit(): void {
+		}
+	}
+	endsnippet
+
+	snippet loggerhelperlog "Logging through LoggerHelper" b
+	LoggerHelper.log(\`[${this.constructor.name}]::[${${2:fnName}}]\`, ${3:data});
+	endsnippet
+
+	snippet loggerhelpererror "Logging through LoggerHelper" b
+	LoggerHelper.error(\`[${this.constructor.name}]::[${${2:fnName}}]\`, ${3:data});
+	endsnippet
+
+	snippet ngcompit "Generate a new Angular component with an inline template" b
+	import { Component, OnInit } from '@angular/core';
+
+	@Component({
+		selector: 'app-${1:component}',
+		template: `
+			<div>
+				$0
+			</div>
+		`,
+		styles: [``]
+	})
+
+	export class ${1:Component}Component implements OnInit {
+		constructor() { }
+
+		ngOnInit(): void {
+		}
+	}
+	endsnippet
+
+	snippet ngdir "Generate a new Angular directive" b
+	import { Directive, ElementRef, HostListener } from '@angular/core';
+
+	@Directive({
+		selector: '[app${1:Directive}]'
+	})
+	export class ${1:Directive}Directive {
+		constructor(private el: ElementRef) { }
+
+		@HostListener('click') onClick() {
+			// Add your directive logic here
+		}
+	}
+	endsnippet
+
+	snippet ngpipe "Generate a new Angular pipe" b
+	import { Pipe, PipeTransform } from '@angular/core';
+
+	@Pipe({
+		name: '${1:pipeName}'
+	})
+	export class ${1:PipeName}Pipe implements PipeTransform {
+		transform(value: any, ...args: any[]): any {
+			return value;
+		}
+	}
+	endsnippet
+
+	snippet ngserv "Generate a new Angular service" b
+	import { Injectable } from '@angular/core';
+
+	@Injectable({
+		providedIn: 'root'
+	})
+	export class ${1:ServiceName}Service {
+		constructor() { }
+	}
+	endsnippet
+
+	snippet ngmod "Generate a new Angular module" b
+	import { NgModule } from '@angular/core';
+	import { CommonModule } from '@angular/common';
+
+	import { ${1:Component}Component } from './${1:component}.component';
+
+	@NgModule({
+		declarations: [${1:Component}Component],
+		imports: [
+			CommonModule
+		],
+		exports: [${1:Component}Component]
+	})
+	export class ${1:Component}Module { }
+	endsnippet
+
+	snippet ngguard "Generate a new Angular route guard" b
+	import { Injectable } from '@angular/core';
+	import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+	import { Observable } from 'rxjs';
+
+	@Injectable({
+		providedIn: 'root'
+	})
+	export class ${1:GuardName}Guard implements CanActivate {
+		canActivate(
+			next: ActivatedRouteSnapshot,
+			state: RouterStateSnapshot
+		): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+			return true;
+		}
+	}
+	endsnippet
+
+	snippet ngresolver "Generate a new Angular resolver" b
+	import { Injectable } from '@angular/core';
+	import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+	import { Observable } from 'rxjs';
+
+	@Injectable({
+		providedIn: 'root'
+	})
+	export class ${1:ResolverName}Resolver implements Resolve<any> {
+		resolve(
+			route: ActivatedRouteSnapshot,
+			state: RouterStateSnapshot
+		): Observable<any> | Promise<any> | any {
+			return null;
+		}
+	}
+	endsnippet
+
+	snippet nginter "Generate a new Angular HTTP interceptor" b
+	import { Injectable } from '@angular/core';
+	import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+	import { Observable } from 'rxjs';
+
+	@Injectable()
+	export class ${1:InterceptorName}Interceptor implements HttpInterceptor {
+		intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+			// Modify the request here if needed
+			return next.handle(req);
+		}
+	}
+	endsnippet

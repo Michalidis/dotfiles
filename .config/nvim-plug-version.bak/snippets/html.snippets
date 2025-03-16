@@ -1,0 +1,85 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+	snippet ngif "Insert Angular *ngIf directive" bi
+	*ngIf="${1:condition}"
+	endsnippet
+
+	snippet ngfor "Insert Angular *ngFor directive" bi
+	*ngFor="let ${1:item} of ${2:items}"
+	endsnippet
+
+	snippet ngswitch "Insert Angular *ngSwitch directive" b
+	*ngSwitch="${1:expression}"
+	endsnippet
+
+	snippet ngswitchcase "Insert Angular *ngSwitchCase directive" b
+	*ngSwitchCase="${1:expression}"
+	endsnippet
+
+	snippet ngswitchdefault "Insert Angular *ngSwitchDefault directive" b
+	*ngSwitchDefault
+	endsnippet
+
+	snippet ngclass "Insert Angular [ngClass] directive" bi
+	[ngClass]="${1:expression}"
+	endsnippet
+
+	snippet ngstyle "Insert Angular [ngStyle] directive" bi
+	[ngStyle]="${1:expression}"
+	endsnippet
+
+	snippet ngmodel "Insert Angular [(ngModel)] directive" bi
+	[(ngModel)]="${1:model}"
+	endsnippet
+
+	snippet ngmodelchange "Insert Angular (ngModelChange) event binding" bi
+	(ngModelChange)="${1:handler}($event)"
+	endsnippet
+
+	snippet ngasync "Insert Angular async pipe usage" bi
+	{{ ${1:observable} | async }}
+	endsnippet
+
+	snippet ngtwoway "Insert Angular two-way binding syntax using ngModel" bi
+	[(ngModel)]="${1:model}"
+	endsnippet
+
+	snippet ngevent "Insert Angular event binding syntax" bi
+	(${1:event})="${2:handler}($event)"
+	endsnippet
+
+	snippet ngbind "Insert Angular property binding syntax" bi
+	[${1:property}]="${2:expression}"
+	endsnippet
+
+	snippet nginter "Insert Angular interpolation" bi
+	{{ ${1:expression} }}
+	endsnippet
+
+	snippet ngrouter "Insert Angular routerLink binding" bi
+	[routerLink]="['/${1:path}']"
+	endsnippet

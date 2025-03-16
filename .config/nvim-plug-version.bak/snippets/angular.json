@@ -1,0 +1,215 @@
+{
+  "Angular Component": {
+    "prefix": "ngcomp",
+    "body": [
+      "import { Component, OnInit } from '@angular/core';",
+      "",
+      "@Component({",
+      "  selector: 'app-${1:component}',",
+      "  templateUrl: './${1:component}.component.html',",
+      "  styleUrls: ['./${1:component}.component.scss']",
+      "})",
+      "export class ${1:Component}Component implements OnInit {",
+      "  constructor() { }",
+      "",
+      "  ngOnInit(): void {",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular component with external template and styles"
+  },
+  "Angular Component (Inline Template)": {
+    "prefix": "ngcompit",
+    "body": [
+      "import { Component, OnInit } from '@angular/core';",
+      "",
+      "@Component({",
+      "  selector: 'app-${1:component}',",
+      "  template: `",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  `,",
+      "  styles: [``]",
+      "})",
+      "export class ${1:Component}Component implements OnInit {",
+      "  constructor() { }",
+      "",
+      "  ngOnInit(): void {",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular component with an inline template"
+  },
+  "Angular Directive": {
+    "prefix": "ngdir",
+    "body": [
+      "import { Directive, ElementRef, HostListener } from '@angular/core';",
+      "",
+      "@Directive({",
+      "  selector: '[app${1:Directive}]'",
+      "})",
+      "export class ${1:Directive}Directive {",
+      "  constructor(private el: ElementRef) { }",
+      "",
+      "  @HostListener('click') onClick() {",
+      "    // Add your directive logic here",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular directive"
+  },
+  "Angular Pipe": {
+    "prefix": "ngpipe",
+    "body": [
+      "import { Pipe, PipeTransform } from '@angular/core';",
+      "",
+      "@Pipe({",
+      "  name: '${1:pipeName}'",
+      "})",
+      "export class ${1:PipeName}Pipe implements PipeTransform {",
+      "  transform(value: any, ...args: any[]): any {",
+      "    return value;",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular pipe"
+  },
+  "Angular Service": {
+    "prefix": "ngserv",
+    "body": [
+      "import { Injectable } from '@angular/core';",
+      "",
+      "@Injectable({",
+      "  providedIn: 'root'",
+      "})",
+      "export class ${1:ServiceName}Service {",
+      "  constructor() { }",
+      "}"
+    ],
+    "description": "Generate a new Angular service"
+  },
+  "Angular Module": {
+    "prefix": "ngmod",
+    "body": [
+      "import { NgModule } from '@angular/core';",
+      "import { CommonModule } from '@angular/common';",
+      "",
+      "import { ${1:Component}Component } from './${1:component}.component';",
+      "",
+      "@NgModule({",
+      "  declarations: [${1:Component}Component],",
+      "  imports: [",
+      "    CommonModule",
+      "  ],",
+      "  exports: [${1:Component}Component]",
+      "})",
+      "export class ${1:Component}Module { }"
+    ],
+    "description": "Generate a new Angular module"
+  },
+  "Angular Guard": {
+    "prefix": "ngguard",
+    "body": [
+      "import { Injectable } from '@angular/core';",
+      "import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';",
+      "import { Observable } from 'rxjs';",
+      "",
+      "@Injectable({",
+      "  providedIn: 'root'",
+      "})",
+      "export class ${1:GuardName}Guard implements CanActivate {",
+      "  canActivate(",
+      "    next: ActivatedRouteSnapshot,",
+      "    state: RouterStateSnapshot",
+      "  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {",
+      "    return true;",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular route guard"
+  },
+  "Angular Resolver": {
+    "prefix": "ngresolver",
+    "body": [
+      "import { Injectable } from '@angular/core';",
+      "import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';",
+      "import { Observable } from 'rxjs';",
+      "",
+      "@Injectable({",
+      "  providedIn: 'root'",
+      "})",
+      "export class ${1:ResolverName}Resolver implements Resolve<any> {",
+      "  resolve(",
+      "    route: ActivatedRouteSnapshot,",
+      "    state: RouterStateSnapshot",
+      "  ): Observable<any> | Promise<any> | any {",
+      "    return null;",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular resolver"
+  },
+  "Angular Interceptor": {
+    "prefix": "ngint",
+    "body": [
+      "import { Injectable } from '@angular/core';",
+      "import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';",
+      "import { Observable } from 'rxjs';",
+      "",
+      "@Injectable()",
+      "export class ${1:InterceptorName}Interceptor implements HttpInterceptor {",
+      "  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {",
+      "    // Modify the request here if needed",
+      "    return next.handle(req);",
+      "  }",
+      "}"
+    ],
+    "description": "Generate a new Angular HTTP interceptor"
+  },
+  "Angular *ngIf": {
+    "prefix": "ngif",
+    "body": ["*ngIf=\"${1:condition}\""],
+    "description": "Insert Angular *ngIf directive"
+  },
+  "Angular *ngFor": {
+    "prefix": "ngfor",
+    "body": ["*ngFor=\"let ${1:item} of ${2:items}\""],
+    "description": "Insert Angular *ngFor directive"
+  },
+  "Angular *ngSwitch": {
+    "prefix": "ngswitch",
+    "body": ["*ngSwitch=\"${1:expression}\""],
+    "description": "Insert Angular *ngSwitch directive"
+  },
+  "Angular Async Pipe": {
+    "prefix": "ngasync",
+    "body": ["{{ ${1:observable} | async }}"],
+    "description": "Insert Angular async pipe usage"
+  },
+  "Angular Two-Way Binding": {
+    "prefix": "ngtwoway",
+    "body": ["[(ngModel)]=\"${1:model}\""],
+    "description": "Insert Angular two-way binding syntax using ngModel"
+  },
+  "Angular Event Binding": {
+    "prefix": "ngevent",
+    "body": ["(${1:event})=\"${2:handler}($event)\""],
+    "description": "Insert Angular event binding syntax"
+  },
+  "Angular Property Binding": {
+    "prefix": "ngbind",
+    "body": ["[${1:property}]=\"${2:expression}\""],
+    "description": "Insert Angular property binding syntax"
+  },
+  "Angular Interpolation": {
+    "prefix": "nginter",
+    "body": ["{{ ${1:expression} }}"],
+    "description": "Insert Angular interpolation"
+  },
+  "Angular RouterLink": {
+    "prefix": "ngrouter",
+    "body": ["[routerLink]=\"['/${1:path}']\""],
+    "description": "Insert Angular routerLink binding"
+  }
+}

@@ -98,7 +98,7 @@ imap <M-ú> <Plug>(copilot-previous)
 imap <C-l> <Plug>(copilot-dismiss)
 
 " ChatGPT (gp.nvim Plugin)
-let $OPENAI_API_KEY = 'TODO'
+let $OPENAI_API_KEY = 'FILL THIS'
 
 " gp.nvim mappings
 " Check the bottom of file in the lua section for keymapping config
