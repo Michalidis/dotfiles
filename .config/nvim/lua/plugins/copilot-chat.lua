@@ -7,7 +7,7 @@ return {
     },
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
-      model = "claude-3.7-sonnet",
+      model = "gemini-2.0-flash-001",
       debug = false, -- Enable to get debug messages in ~/.local/state/nvim/CopilotChat.nvim.log
       -- See Configuration section for more options
     },
