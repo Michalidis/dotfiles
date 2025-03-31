@@ -39,6 +39,10 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      -- opts.sources = opts.sources or {}
+      -- opts.sources.per_filetype = opts.sources.per_filetype or {}
+      -- opts.sources.per_filetype.codecompanion = { "codecompanion" }
     end,
   },
 }

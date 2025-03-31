@@ -7,6 +7,7 @@ return {
           -- files = { hidden = true, dirs = { ".", "~/.config/nvim/", "meme/src/app/generated/openapi/" } },
           -- grep = { hidden = true, dirs = { ".", "meme/src/app/generated/openapi/" } },
           buffers = { hidden = true },
+          explorer = { auto_close = true },
         },
       },
     },
