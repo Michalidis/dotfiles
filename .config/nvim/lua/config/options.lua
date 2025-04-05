@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.opt.winbar = "%=%m %f"
+vim.g.codecompanion_auto_tool_mode = true
