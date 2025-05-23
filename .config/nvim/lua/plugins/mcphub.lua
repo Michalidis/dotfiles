@@ -12,12 +12,15 @@ return {
   -- build = "bundled_build.lua",  -- Use this and set use_bundled_binary = true in opts  (see Advanced configuration)
   config = function()
     require("mcphub").setup({
+      auto_approve = true, -- Automatically approve all requests
       extensions = {
         codecompanion = {
-          -- Show the mcp tool result in the chat buffer
-          -- NOTE:if the result is markdown with headers, content after the headers wont be sent by codecompanion
-          show_result_in_chat = true,
-          make_vars = true, -- make chat #variables from MCP server resources
+          show_result_in_chat = true, -- Show tool results in chat
+          make_vars = true, -- Create chat variables from resources
+          make_slash_commands = true, -- make /slash_commands from MCP server prompts
+        },
+        avante = {
+          make_slash_commands = true, -- make /slash commands from MCP server prompts
         },
       },
     })

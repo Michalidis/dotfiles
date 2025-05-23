@@ -11,6 +11,16 @@ return {
         opts = {
           language = "English",
         },
+        extensions = {
+          mcphub = {
+            callback = "mcphub.extensions.codecompanion",
+            opts = {
+              show_result_in_chat = true, -- Show mcp tool results in chat
+              make_vars = true, -- Convert resources to #variables
+              make_slash_commands = true, -- Add prompts as /slash commands
+            },
+          },
+        },
         strategies = {
           chat = {
             -- adapter = "gemini",
@@ -21,24 +31,7 @@ return {
               },
               -- Add further custom keymaps here
             },
-            tools = {
-              vectorcode = {
-                description = "Run VectorCode to retrieve the project context.",
-                callback = require("vectorcode.integrations").codecompanion.chat.make_tool(),
-              },
-              ["mcp"] = {
-                -- calling it in a function would prevent mcphub from being loaded before it's needed
-                callback = function()
-                  return require("mcphub.extensions.codecompanion")
-                end,
-                description = "Call tools and resources from the MCP Servers",
-                opts = {
-                  requires_approval = true,
-                },
-              },
-            },
             slash_commands = {
-              codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command(),
               ["file"] = {
                 -- Location to the slash command in CodeCompanion
                 callback = "strategies.chat.slash_commands.file",
@@ -74,6 +67,7 @@ return {
               name = "copilot",
               schema = {
                 model = {
+                  -- default = "gpt-4o",
                   default = "claude-3.7-sonnet",
                   -- default = "o3-mini-2025-01-31", -- Allows browsing internet, I think
                   -- default = "gemini-2.0-flash-001",
@@ -85,7 +79,7 @@ return {
             return require("codecompanion.adapters").extend("gemini", {
               name = "gemini",
               env = {
-                api_key = "FILL THIS",
+                api_key = "AIzaSyA8exbGAoK4NqpHWBBX6szPjmx9lFgTfkE",
               },
               schema = {
                 model = {

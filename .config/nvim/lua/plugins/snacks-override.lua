@@ -10,6 +10,11 @@ return {
           explorer = { auto_close = true },
         },
       },
+      terminal = {
+        win = {
+          shell = "/bin/bash", -- or any other shell like "/bin/bash", "/bin/fish", etc.
+        },
+      },
     },
     keys = {
       {
