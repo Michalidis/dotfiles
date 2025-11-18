@@ -5,7 +5,9 @@ return {
     require("lualine").setup({
       sections = {
         lualine_x = {
-          { require("mcphub.extensions.lualine") },
+          function()
+            return vim.g.mcphub_status or ""
+          end,
         },
       },
     })
